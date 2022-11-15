@@ -7,6 +7,8 @@ import { Provider } from 'react-redux';
 import ProfileSreen from './src/Screens/ProfileScreen';
 import { RootSiblingParent } from 'react-native-root-siblings';
 import SingUpScreen from './src/Screens/SingUpScreen';
+import PersonalInfoScreen from './src/Screens/PersonalInfoScreen';
+import ChangePasswordScreen from './src/Screens/ChangePasswordScreen';
 
 const store = configureStore()
 const Stack = createNativeStackNavigator();
@@ -25,6 +27,8 @@ export default function App() {
             <Stack.Screen options={{ headerShown: false }} name="SignUp" component={SingUpScreen} />
             <Stack.Screen options={{ headerShown: false }} name="Main" component={MainScreen} />
             <Stack.Screen options={{ headerShown: false }} name="Profile" component={ProfileSreen} />
+            <Stack.Screen options={{ headerShown: false }} name="PersonalInfo" component={PersonalInfoScreen} />
+            <Stack.Screen options={{ headerShown: false }} name="ChangePassword" component={ChangePasswordScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </Provider>

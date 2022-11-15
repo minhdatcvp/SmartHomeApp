@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, Image,TouchableWithoutFeedback } from 'react-native';
+import { StyleSheet, View, Text, Image, TouchableWithoutFeedback } from 'react-native';
 import { connect } from 'react-redux';
 import { changeCount } from '../Actions/counts';
 import { bindActionCreators } from 'redux';
@@ -21,6 +21,10 @@ const SettingScreen = (props) => {
       }
     })
   }
+
+  const onOpenViewChangePW = () => {
+    navigation.replace("ChangePassword")
+}
 
 
   return (
@@ -58,13 +62,15 @@ const SettingScreen = (props) => {
 
       </View>
       <View style={{ marginTop: 20 }}>
-        <View style={styles.optionsSetting}>
-          <View style={[baseStyles.row, styles.itemOption]}>
-            <FontAwesome name="user" size={24} color="#FA6400" />
-            <Text style={{ marginLeft: 20 }}>Password</Text>
-            <MaterialIcons name="keyboard-arrow-right" size={24} color="black" style={{ marginLeft: 'auto' }} />
+        <TouchableWithoutFeedback onPress={() => onOpenViewChangePW()}>
+          <View style={styles.optionsSetting}>
+            <View style={[baseStyles.row, styles.itemOption]}>
+              <FontAwesome name="user" size={24} color="#FA6400" />
+              <Text style={{ marginLeft: 20 }}>Password</Text>
+              <MaterialIcons name="keyboard-arrow-right" size={24} color="black" style={{ marginLeft: 'auto' }} />
+            </View>
           </View>
-        </View>
+        </TouchableWithoutFeedback>
         <View style={styles.optionsSetting}>
           <View style={[baseStyles.row, styles.itemOption]}>
             <FontAwesome name="language" size={24} color="#FA6400" />

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, Image, TouchableNativeFeedback } from 'react-native';
+import { StyleSheet, View, Text, Image, TouchableNativeFeedback, TouchableWithoutFeedback } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { baseStyles } from '../Styles/styles';
 import { FontAwesome } from '@expo/vector-icons';
@@ -15,7 +15,7 @@ import { onValue, ref } from 'firebase/database';
 const ProfileSreen = (props) => {
     const userId = useSelector((s) => s.state.userId)
     const navigation = useNavigation();
-    const [user , setuser] = useState({});
+    const [user, setuser] = useState({});
 
     // 
     useEffect(() => {
@@ -52,6 +52,14 @@ const ProfileSreen = (props) => {
     const logoutSmarthome = async () => {
         await signOut(auth)
             .then(() => console.log("User signed out!"));
+    }
+
+    const onOpenViewInfo = () => {
+        navigation.replace("PersonalInfo", {
+            options: {
+                data: user
+            }
+        })
     }
 
     return (
@@ -92,13 +100,15 @@ const ProfileSreen = (props) => {
                 </View>
             </View>
             <View style={{ marginTop: 20 }}>
-                <View style={styles.optionsSetting}>
-                    <View style={[baseStyles.row, styles.itemOption]}>
-                        <FontAwesome name="user" size={24} color="#FA6400" />
-                        <Text style={{ marginLeft: 20 }}>Personal Info</Text>
-                        <MaterialIcons name="keyboard-arrow-right" size={24} color="black" style={{ marginLeft: 'auto' }} />
+                <TouchableWithoutFeedback onPress={() => onOpenViewInfo()}>
+                    <View style={styles.optionsSetting}>
+                        <View style={[baseStyles.row, styles.itemOption]}>
+                            <FontAwesome name="user" size={24} color="#FA6400" />
+                            <Text style={{ marginLeft: 20 }}>Personal Info</Text>
+                            <MaterialIcons name="keyboard-arrow-right" size={24} color="black" style={{ marginLeft: 'auto' }} />
+                        </View>
                     </View>
-                </View>
+                </TouchableWithoutFeedback>
                 <View style={styles.optionsSetting}>
                     <View style={[baseStyles.row, styles.itemOption]}>
                         <MaterialIcons name="security" size={24} color="#FA6400" />
@@ -124,7 +134,7 @@ const ProfileSreen = (props) => {
             <TouchableNativeFeedback onPress={() => logoutSmarthome()}>
                 <View style={styles.logOut}>
                     <Entypo name="log-out" size={24} color="black" />
-                    <Text style={{marginLeft: 10}}>Logout</Text>
+                    <Text style={{ marginLeft: 10 }}>Logout</Text>
                 </View>
             </TouchableNativeFeedback>
         </View>
@@ -223,7 +233,7 @@ const styles = StyleSheet.create({
         left: '30%',
         height: 50,
         alignItems: 'center',
-        justifyContent:'center',
+        justifyContent: 'center',
     }
 });
 

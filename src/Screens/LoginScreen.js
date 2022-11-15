@@ -17,6 +17,7 @@ import { authErrors } from '../../Enumeration/autherror'
 import { useDispatch, useSelector } from 'react-redux'
 import { setuser } from '../Actions/counts'
 import Toast from 'react-native-root-toast';
+import { Ionicons } from '@expo/vector-icons'; 
 
 // màn đăng nhập
 const LoginScreen = (props) => {
@@ -24,6 +25,7 @@ const LoginScreen = (props) => {
     const [email, setEmail] = useState('')
     // mật khẩu
     const [password, setPassword] = useState('')
+    const [hidePass, setHidePass] = useState(true);
     // chuyển view
     const navigation = useNavigation()
 
@@ -129,8 +131,9 @@ const LoginScreen = (props) => {
                             value={password}
                             onChangeText={text => setPassword(text)}
                             style={styles.input}
-                            secureTextEntry
+                            secureTextEntry={hidePass ? true : false}
                         />
+                       <Ionicons style={styles.showhidePass}  name={hidePass ? 'ios-eye-off' : 'ios-eye'} size={22} color="#9d9d9d" onPress={() => setHidePass(!hidePass)}/>
                     </View>
                     <TouchableNativeFeedback onPress={() => forgotPassword()}>
                         <Text style={[baseStyles.p, styles.forgotpass]}>Forgot Password?</Text>
@@ -143,7 +146,7 @@ const LoginScreen = (props) => {
                             <Text style={styles.buttonText}>Login</Text>
                         </TouchableOpacity>
                     </View>
-                    <Text style={baseStyles.p}>Don't have an account ?  <Text style={{color: '#FA6400'}} onPress={() => singUpApp()}>Signup Now</Text></Text>
+                    <Text style={baseStyles.p}>Don't have an account ?  <Text style={{ color: '#FA6400' }} onPress={() => singUpApp()}>Signup Now</Text></Text>
                 </View>
                 <View style={[styles.contentLogin, styles.ortherLogin]}>
                     <View style={baseStyles.row}>
@@ -256,5 +259,10 @@ const styles = StyleSheet.create({
     },
     buttonloginWithGG: {
         backgroundColor: '#f33e3e'
+    },
+    showhidePass:{
+        position: 'absolute',
+        bottom:15,
+        right:15
     }
 })

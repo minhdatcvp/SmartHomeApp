@@ -19,13 +19,17 @@ import { RoomDefault } from '../../Enumeration/RoomDefault';
 import { authErrors } from '../../Enumeration/autherror';
 import { push, ref, update } from 'firebase/database';
 import { async } from '@firebase/util';
+import { Ionicons } from '@expo/vector-icons'; 
 
 // màn đăng ký
 const SingUpScreen = () => {
     // tài khoản
     const [email, setEmail] = useState('')
+     // tài khoản
+     const [phone, setPhone] = useState('')
     // mật khẩu
     const [password, setPassword] = useState('')
+    const [hidePass, setHidePass] = useState(true);
     // tên
     const [fullName, setFullName] = useState('')
     // chuyển view
@@ -47,6 +51,7 @@ const SingUpScreen = () => {
                     let dataUser = {
                         fullname: fullName,
                         email: email,
+                        phone: phone,
                         home: uuidHome
                     }
 
@@ -119,20 +124,32 @@ const SingUpScreen = () => {
                             value={fullName}
                             onChangeText={text => setFullName(text)}
                             style={styles.input}
+                            keyboardType='default'
                         />
                         <TextInput
                             placeholder="Email"
                             value={email}
                             onChangeText={text => setEmail(text)}
                             style={styles.input}
+                            keyboardType='email-address'
+                        />
+                         <TextInput
+                            placeholder="Phone"
+                            value={phone}
+                            onChangeText={text => setPhone(text)}
+                            style={styles.input}
+                            keyboardType='phone-pad'
                         />
                         <TextInput
                             placeholder="Password"
                             value={password}
+                            keyboardType='default'
                             onChangeText={text => setPassword(text)}
                             style={styles.input}
-                            secureTextEntry
+
+                            secureTextEntry={hidePass ? true : false}
                         />
+                        <Ionicons style={styles.showhidePass}  name={hidePass ? 'ios-eye-off' : 'ios-eye'} size={22} color="#9d9d9d" onPress={() => setHidePass(!hidePass)}/>
                     </View>
                     <View style={styles.buttonContainer}>
                         <TouchableOpacity
@@ -217,5 +234,10 @@ const styles = StyleSheet.create({
         height: 50,
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    showhidePass:{
+        position: 'absolute',
+        bottom:15,
+        right:15
     }
 })

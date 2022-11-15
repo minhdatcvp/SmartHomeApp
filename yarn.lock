@@ -1083,6 +1083,14 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     "to-fast-properties" "^2.0.0"
 
+"@callstack/react-theme-provider@^3.0.8":
+  "integrity" "sha512-5U231sYY2sqQOaELX0WBCn+iluV8bFaXIS7em03k4W5Xz0AhGvKlnpLIhDGFP8im/SvNW7/2XoR0BsClhn9t6Q=="
+  "resolved" "https://registry.npmjs.org/@callstack/react-theme-provider/-/react-theme-provider-3.0.8.tgz"
+  "version" "3.0.8"
+  dependencies:
+    "deepmerge" "^3.2.0"
+    "hoist-non-react-statics" "^3.3.0"
+
 "@expo/bunyan@^4.0.0", "@expo/bunyan@4.0.0":
   "integrity" "sha512-Ydf4LidRB/EBI+YrB+cVLqIseiRfjUI/AeHBgjGMtq3GroraDu81OV7zqophRgupngoL3iS3JUMDMnxO7g39qA=="
   "resolved" "https://registry.npmjs.org/@expo/bunyan/-/bunyan-4.0.0.tgz"
@@ -1159,7 +1167,7 @@
     "uuid" "^3.4.0"
     "wrap-ansi" "^7.0.0"
 
-"@expo/code-signing-certificates@^0.0.2":
+"@expo/code-signing-certificates@^0.0.2", "@expo/code-signing-certificates@0.0.2":
   "integrity" "sha512-vnPHFjwOqxQ1VLztktY+fYCfwvLzjqpzKn09rchcQE7Sdf0wtW5fFtIZBEFOOY5wasp8tXSnp627zrAwazPHzg=="
   "resolved" "https://registry.npmjs.org/@expo/code-signing-certificates/-/code-signing-certificates-0.0.2.tgz"
   "version" "0.0.2"
@@ -5093,6 +5101,11 @@
     "expo-dev-menu-interface" "0.7.2"
     "semver" "^7.3.5"
 
+"expo-eas-client@~0.3.0":
+  "integrity" "sha512-dBD00lJ629ayh5abbmgn6I1Z5NOaWM1iea2ODLd/EF1ZcS1P3yiPm6blpvL/tD+uewL8gxxmla/Ac+SiDdYAYA=="
+  "resolved" "https://registry.npmjs.org/expo-eas-client/-/expo-eas-client-0.3.0.tgz"
+  "version" "0.3.0"
+
 "expo-error-recovery@~3.2.0":
   "integrity" "sha512-XZ630ks5HNxa9oc2Ya1hEn1ez031Cy4VnyxerPC2o9fKNKSrD/64cRqGF9NkGM3X2uf8+PCB9adxVflAIXBf6w=="
   "resolved" "https://registry.npmjs.org/expo-error-recovery/-/expo-error-recovery-3.2.0.tgz"
@@ -5164,10 +5177,33 @@
   "resolved" "https://registry.npmjs.org/expo-status-bar/-/expo-status-bar-1.4.0.tgz"
   "version" "1.4.0"
 
+"expo-structured-headers@~2.2.0":
+  "integrity" "sha512-nY6GuvoS/U5XdhfBNmvXGRoGzIXywXpSZs2wdiP+FbS79P9UWyEqzgARrBTF+6pQxUVMs6/vdffxRpwhjwYPug=="
+  "resolved" "https://registry.npmjs.org/expo-structured-headers/-/expo-structured-headers-2.2.1.tgz"
+  "version" "2.2.1"
+
 "expo-updates-interface@~0.7.0":
   "integrity" "sha512-saThnbrYDSjKxfMFFguAvh5o5KGabvAOHItkJRwq2L3c0T/3q26Q0kM83880h/+TTtAVsl1+Vhny9d+ImD3yvQ=="
   "resolved" "https://registry.npmjs.org/expo-updates-interface/-/expo-updates-interface-0.7.0.tgz"
   "version" "0.7.0"
+
+"expo-updates@~0.14.7":
+  "integrity" "sha512-xzRvsv45TfIYJ4arTMiorAci4LvUQvpBJx0llJcdCFLWGcoj59roi48ldtDTwkgQAGjDP/Oyysd3zTyvpwxjYg=="
+  "resolved" "https://registry.npmjs.org/expo-updates/-/expo-updates-0.14.7.tgz"
+  "version" "0.14.7"
+  dependencies:
+    "@expo/code-signing-certificates" "0.0.2"
+    "@expo/config" "~7.0.1"
+    "@expo/config-plugins" "~5.0.1"
+    "@expo/metro-config" "~0.4.0"
+    "arg" "4.1.0"
+    "expo-eas-client" "~0.3.0"
+    "expo-manifests" "~0.3.0"
+    "expo-structured-headers" "~2.2.0"
+    "expo-updates-interface" "~0.7.0"
+    "fbemitter" "^3.0.0"
+    "resolve-from" "^5.0.0"
+    "uuid" "^3.4.0"
 
 "expo@*", "expo@~46.0.13":
   "integrity" "sha512-xaU8GlJ7j3vo1U5tSbFDsoJqUfTkRF4XDEUj/Dr/jqUf0GcvlMKuGe6HvnbMO9slxYQlYlWJUzvlAx38TLhxyA=="
@@ -9333,6 +9369,20 @@
   "resolved" "https://registry.npmjs.org/react-native-gradle-plugin/-/react-native-gradle-plugin-0.0.7.tgz"
   "version" "0.0.7"
 
+"react-native-iphone-x-helper@^1.3.1":
+  "integrity" "sha512-HOf0jzRnq2/aFUcdCJ9w9JGzN3gdEg0zFE4FyYlp4jtidqU03D5X7ZegGKfT1EWteR0gPBGp9ye5T5FvSWi9Yg=="
+  "resolved" "https://registry.npmjs.org/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.3.1.tgz"
+  "version" "1.3.1"
+
+"react-native-paper@^5.0.0-rc.9":
+  "integrity" "sha512-5wZWe02NycnE5AAOUqcZt0rq7ir8wayyF87Y2+6eE7iXjAX7UtSlrZm2d3qYwqoAxjrrFJatlEnmdNXOyFbbEw=="
+  "resolved" "https://registry.npmjs.org/react-native-paper/-/react-native-paper-5.0.0-rc.9.tgz"
+  "version" "5.0.0-rc.9"
+  dependencies:
+    "@callstack/react-theme-provider" "^3.0.8"
+    "color" "^3.1.2"
+    "react-native-iphone-x-helper" "^1.3.1"
+
 "react-native-ratings@8.0.4":
   "integrity" "sha512-Xczu5lskIIRD6BEdz9A0jDRpEck/SFxRqiglkXi0u67yAtI1/pcJC76P4MukCbT8K4BPVl+42w83YqXBoBRl7A=="
   "resolved" "https://registry.npmjs.org/react-native-ratings/-/react-native-ratings-8.0.4.tgz"
@@ -9400,7 +9450,7 @@
   "resolved" "https://registry.npmjs.org/react-native-uuid/-/react-native-uuid-2.0.1.tgz"
   "version" "2.0.1"
 
-"react-native-vector-icons@>7.0.0":
+"react-native-vector-icons@*", "react-native-vector-icons@>7.0.0":
   "integrity" "sha512-wKYLaFuQST/chH3AJRjmOLoLy3JEs1JR6zMNgTaemFpNoXs0ztRnTxcxFD9xhX7cJe1/zoN5BpQYe7kL0m5yyA=="
   "resolved" "https://registry.npmjs.org/react-native-vector-icons/-/react-native-vector-icons-9.2.0.tgz"
   "version" "9.2.0"
@@ -9421,7 +9471,7 @@
     "postcss-value-parser" "^4.2.0"
     "styleq" "^0.1.2"
 
-"react-native@*", "react-native@^*", "react-native@>=0.47.0", "react-native@>=0.50.0", "react-native@>=0.59", "react-native@0.69.6":
+"react-native@*", "react-native@^*", "react-native@>=0.42.0", "react-native@>=0.47.0", "react-native@>=0.50.0", "react-native@>=0.59", "react-native@0.69.6":
   "integrity" "sha512-wwXpqM+12kdEYdBZCJUb5SBu95CzgejrwFeYJ78RzHZV/Sj6DBRekbsHGrDDsY4R25QXALQxy4DQYQCObVvWjA=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.69.6.tgz"
   "version" "0.69.6"
@@ -9485,7 +9535,7 @@
     "object-assign" "^4.1.1"
     "react-is" "^16.12.0 || ^17.0.0 || ^18.0.0"
 
-"react@*", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^17.0.2 || ^18.0.0", "react@^18.0.0", "react@>=17.0.0", "react@18.0.0":
+"react@*", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^17.0.2 || ^18.0.0", "react@^18.0.0", "react@>=16.3.0", "react@>=17.0.0", "react@18.0.0":
   "integrity" "sha512-x+VL6wbT4JRVPm7EGxXhZ8w8LTROaxPXOqhlGyVSrv0sB1jkyFGgXxJ8LVoPRLvPR6/CIZGFmfzqUa2NYeMr2A=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.0.0.tgz"
   "version" "18.0.0"

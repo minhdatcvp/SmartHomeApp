@@ -1,10 +1,12 @@
 {
   "expo": {
-    "name": "SmartHome",
-    "slug": "SmartHome",
+    "name": "SmartHome App",
+    "slug": "smarthome-app",
+    "description": "App SmartHome",
+    "privacy":"public",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/Logo.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
